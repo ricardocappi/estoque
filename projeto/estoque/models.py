@@ -34,4 +34,3 @@ class EstoqueItens(models.Model):
 
     def __str__(self):
         return '{} {} {}'.format(self.pk, self.estoque.primary_key, self.produto)
-
