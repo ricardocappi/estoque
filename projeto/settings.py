@@ -11,9 +11,11 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-#19/08/2019 ---->>>>> Alterei aqui com este importe para poder preservar as informações de segurança sem deixar exposto
 from decouple import config, Csv
 
+
+# 19/08/2019 ---->>>>> Alterei aqui com este importe para poder preservar
+# as informações de segurança sem deixar exposto
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,15 +25,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#19/08/2019 ---->>>>> Alterei aqui com esta configuração para esconder chaves segurança
+# 19/08/2019 ---->>>>> Alterei aqui com esta configuração para esconder chaves segurança
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#19/08/2019 ---->>>>> Alterei aqui com esta configuração
+# 19/08/2019 ---->>>>> Alterei aqui com esta configuração
 DEBUG = config("DEBUG", default=False, cast=bool)
 
-#19/08/2019 ---->>>>> Alterei aqui com esta configuração
-ALLOWED_HOSTS = config('ALOWED_HOSTS', default=[], cast=Csv())
+# 19/08/2019 ---->>>>> Alterei aqui com esta configuração
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default=[], cast=Csv())
 
 
 # Application definition
@@ -43,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # myapps --->>> Inclui esta linha
+    'projeto.core',
 ]
 
 MIDDLEWARE = [
@@ -109,12 +113,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-#19/08/2019 ---->>>>> Alterei aqui com configuração português
-#LANGUAGE_CODE = 'en-us'
+# 19/08/2019 ---->>>>> Alterei aqui com configuração português
+# LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'pt-br'
 
-#19/08/2019 ---->>>>> Alterei aqui com configuração português
-#TIME_ZONE = 'UTC'
+# 19/08/2019 ---->>>>> Alterei aqui com configuração português
+# TIME_ZONE = 'UTC'
 TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
