@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-
 {% block css %}
 	<style type="text/css">
 		.ok {
@@ -10,7 +9,6 @@
 		}
 	</style>
 {% endblock css %}
-
 {% block content %}
             <div class="page-header">
                 <h2><i class="fa fa-user"></i>Lista de Produtos</h2>
@@ -37,7 +35,9 @@
 								{% endif %}
                 			</td>
                 			<td>{{ object.ncm }}</td>
-                			<td>{{ object.produto }}</td>
+                			<td>
+                                <a href="{% url 'produto:produto_detail' object.pk %}">{{ object.produto }}</a>
+                            </td>
                 			<td>R$ <span class="pull-right">{{ object.preco }}</span></td>
                 			<td class="text-right">{{ object.estoque }}</td>
                 			<td class="text-right">{{ object.estoque_minimo }}</td>
