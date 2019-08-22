@@ -10,11 +10,15 @@
 	</style>
 {% endblock css %}
 {% block content %}
-    <a href="{% url 'produto:produto_list' %}">Voltar</a>
     <div class="page-header">
         <h1>{{ object }}
-        	<span class="pull-right">
-        		<a href="">
+		    <span class="pull-right">
+		        <a href="{% url 'produto:produto_list' %}">
+		            <button type="button" class="btn btn-sucess">
+		                <span class="fa fa-chevron-circle-left"></span> Voltar
+		            </button>
+		        </a>
+        		<a class="" href="">
         			<button type="button" class="btn btn-sucess">
         				<span class="fa fa-pencil"></span> Editar
         			</button>
